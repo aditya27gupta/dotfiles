@@ -10,7 +10,6 @@ return {
 
     -- import mason-lspconfig
     local mason_lspconfig = require("mason-lspconfig")
-
     local mason_tool_installer = require("mason-tool-installer")
 
     -- enable mason and configure icons
@@ -27,8 +26,7 @@ return {
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
-        "jedi-language-server",
-        "ruff_lsp",
+        "jedi_language_server",
         "lua_ls",
       },
     })
@@ -39,6 +37,8 @@ return {
         "stylua", -- lua formatter
         "isort", -- python formatter
         "black", -- python formatter
+        "flake8", --python linter
+        "mypy", -- python type checker
       },
     })
   end,
