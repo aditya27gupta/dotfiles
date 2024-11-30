@@ -38,3 +38,4 @@ unset __conda_setup
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
+export PATH=$HOME/.local/bin$PATH
