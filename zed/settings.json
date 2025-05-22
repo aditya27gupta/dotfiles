@@ -20,33 +20,33 @@
     "git_status": true
   },
   "git": {
-      "git_gutter": "tracked_files"
-    },
+    "git_gutter": "tracked_files"
+  },
   "format_on_save": "on",
   "use_autoclose": true,
   "indent_guides": {
     "enabled": true,
     "coloring": "indent_aware"
   },
-  "search_results":true,
+  "search_results": true,
   "hover_popover_enabled": true,
   "hour_format": "hour24",
   "unnecessary_code_fade": 0.7,
   "enable_language_server": true,
   "languages": {
-        "JSON": {
-          "tab_size": 4
-        },
-        "Python": {
-            "language_servers": ["ruff"],
-            "format_on_save": "on",
-            "formatter": {
-                "code_actions":{
-                    "source.organizeImports.ruff": true
-                }
-            }
+    "JSON": {
+      "tab_size": 4
+    },
+    "Python": {
+      "language_servers": ["ruff"],
+      "format_on_save": "on",
+      "formatter": {
+        "code_actions": {
+          "source.organizeImports.ruff": true
         }
-      },
+      }
+    }
+  },
   "ensure_final_newline_on_save": true,
   "soft_wrap": "preferred_line_length",
   "vim_mode": false,

@@ -1,6 +1,7 @@
 import argparse
-from pathlib import Path
 import shutil
+from pathlib import Path
+
 
 def find_config_present():
     for loc in Path('.').iterdir():
@@ -32,4 +33,3 @@ if __name__ == "__main__":
     config_loc = get_config_location()
     for app in find_config_present():
         check_and_replace(config_loc, app)
-
