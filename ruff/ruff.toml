@@ -17,7 +17,11 @@ indent-width = 4
 
 [lint]
 select = ["ALL"]
-ignore = []
+ignore = [
+"D100", # Docstring module
+"D103", # Docstring function
+"T201", # Print statement
+]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.
 fixable = ["ALL"]
