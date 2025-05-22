@@ -1,9 +1,9 @@
 {
   "features": {
-    "inline_completion_provider": "none"
+    "edit_prediction_provider": "none"
   },
   "terminal": {
-    "dock": "right",
+    "dock": "bottom",
     "working_directory": "current_project_directory"
   },
   "buffer_font_family": "JetBrainsMono Nerd Font",
@@ -17,7 +17,7 @@
   "tabs": {
     "close_position": "right",
     "file_icons": true,
-    "git_status": false
+    "git_status": true
   },
   "git": {
       "git_gutter": "tracked_files"
@@ -34,12 +34,20 @@
   "unnecessary_code_fade": 0.7,
   "enable_language_server": true,
   "languages": {
-    "JSON": {
-      "tab_size": 4
-    }
-  },
+        "JSON": {
+          "tab_size": 4
+        },
+        "Python": {
+            "language_servers": ["ruff"],
+            "format_on_save": "on",
+            "formatter": {
+                "code_actions":{
+                    "source.organizeImports.ruff": true
+                }
+            }
+        }
+      },
   "ensure_final_newline_on_save": true,
-  "preferred_line_length": 96,
   "soft_wrap": "preferred_line_length",
   "vim_mode": false,
   "telemetry": {
@@ -62,7 +70,7 @@
     "auto_reveal_entries": true,
     "auto_fold_dirs": true
   },
-  "assistant": {
+  "agent": {
     "enabled": false,
     "button": false,
     "version": "2"
