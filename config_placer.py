@@ -9,9 +9,6 @@ def find_config_present() -> Path:
             yield loc
 
 
-
-
-
 def check_and_replace(config_loc: str, application: str) -> None:
     src_path = Path().joinpath(application)
     dest_path = Path(config_loc).joinpath(application)

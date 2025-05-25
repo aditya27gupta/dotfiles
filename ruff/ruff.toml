@@ -7,7 +7,6 @@ exclude = [
     ".pytype",
     ".ruff_cache",
     ".venv",
-    ".vscode",
     "venv",
 ]
 
@@ -18,9 +17,12 @@ indent-width = 4
 [lint]
 select = ["ALL"]
 ignore = [
-"D100", # Docstring module
-"D103", # Docstring function
-"T201", # Print statement
+    "COM812", #
+    "D100",   # Docstring module
+    "D103",   # Docstring function
+    "D203",   # incorrect blank line before class
+    "D212",   # multi-line summary first line
+    "T201",   # Print statement
 ]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.
