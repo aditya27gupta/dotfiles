@@ -1,12 +1,11 @@
-import argparse
 import shutil
 from pathlib import Path
 
 
 def find_config_present() -> Path:
-    ignore_vals = ['.git', 'config_placer']
+    ignore_vals = [".git", "config_placer", ".gitignore"]
     for loc in Path.cwd().iterdir():
-        if not any([val in loc.name for val in ignore_vals]):
+        if loc in ignore_vals:
             yield loc
 
 
@@ -21,7 +20,7 @@ def check_and_replace(src_path: Path, dest_path: Path) -> None:
             shutil.copy2(src=src_path, dst=new_dest_path)
             print(f"{src_path.name.upper()} -> {dest_path}")
     except shutil.Error as e:
-        print(f"{application.name} couldn't be placed due to : {e}")
+        print(f"{src_path.name} couldn't be placed due to : {e}")
 
 
 if __name__ == "__main__":
