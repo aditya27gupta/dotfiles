@@ -1,0 +1,8 @@
+[keyboard]
+bindings = [
+{key = 'N', mods = "Control", action = "CreateNewWindow"},
+{key = 'V', mods = "Control", action = "Paste"},
+{key = 'C', mods = "Control", action = "Copy"},
+{key = 'Key0', mods = "Control", action = "ResetFontSize"},
+{key = 'M', mods = "Control", action = "ToggleMaximized"},
+]
