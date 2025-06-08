@@ -3,9 +3,9 @@ from pathlib import Path
 
 
 def find_config_present() -> Path:
-    ignore_vals = [".git", "config_placer", ".gitignore"]
+    ignore_vals = [".git", "config_placer.py", ".gitignore"]
     for loc in Path.cwd().iterdir():
-        if loc in ignore_vals:
+        if loc.name not in ignore_vals:
             yield loc
 
 

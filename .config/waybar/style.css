@@ -1,0 +1,29 @@
+@define-color foreground #eeeeee;
+@define-color foreground-inactive #aaaaaa;
+@define-color background #000000;
+@define-color blue #87ceeb;
+
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+}
+
+#waybar {
+    color: @foreground;
+    background-color: @background;
+}
+
+#workspaces button {
+    color: @foreground;
+    padding-left: 0.7em;
+}
+
+#workspaces button.active {
+    color: @blue;
+}
+
+#workspaces button.empty {
+    color: @foreground-inactive;
+}

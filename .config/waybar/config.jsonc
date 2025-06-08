@@ -1,0 +1,83 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 24,
+  "spacing": 10,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["cpu", "wireplumber", "battery", "network", "custom/power"],
+
+  "hyprland/workspaces": {
+    "format": "<span size='larger'>{icon}</span>",
+    "on-click": "activate",
+    "format-icons": {
+      "active": "\uf444",
+      "default": "\uf4c3",
+    },
+    "icon-size": 14,
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "1": [],
+    },
+  },
+
+  "cpu": {
+    "format": "  {usage}%",
+  },
+
+  "clock": {
+    "format": "{:%d.%m.%Y | %H:%M}",
+  },
+
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "on-click": "helvum",
+    "format-icons": ["", "", ""],
+    "max-volume": 100,
+    "scroll-step": 5,
+  },
+
+  "battery": {
+    "bat": "BAT1",
+    "interval": 60,
+    "states": {
+      "warning": 40,
+      "critical": 20,
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "format-full": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "max-length": 25,
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "\uf4bc {used:0.1f}G",
+  },
+
+  "temperature": {
+    "format": " {temperatureC}°C",
+  },
+
+  "network": {
+    "interface": "wlan0",
+    "format": "{ifname}",
+    "format-wifi": "  {signalStrength}% {bandwidthTotalBytes}",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "format-disconnected": "", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{signalStrength}%   {bandwidthTotalBytes}",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "interval": 2,
+  },
+
+  "custom/power": {
+    "format": " ",
+    "on-click": "nwg-bar",
+  },
+}

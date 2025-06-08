@@ -11,7 +11,7 @@
   "buffer_font_size": 14,
   "theme": {
     "mode": "dark",
-    "light": "Short Giraffe",
+    "light":"Ayu Light",
     "dark": "One Dark"
   },
   "tabs": {
