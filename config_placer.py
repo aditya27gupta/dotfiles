@@ -4,32 +4,26 @@ from pathlib import Path
 
 
 def find_config_present() -> Path:
-    for loc in Path().iterdir():
-        if not loc.name.startswith(".") and not loc.name.endswith("py"):
+    ignore_vals = ['.git', 'config_placer']
+    for loc in Path.cwd().iterdir():
+        if not any([val in loc.name for val in ignore_vals]):
             yield loc
 
 
-def check_and_replace(config_loc: str, application: str) -> None:
-    src_path = Path().joinpath(application)
-    dest_path = Path(config_loc).joinpath(application)
+def check_and_replace(src_path: Path, dest_path: Path) -> None:
+    new_dest_path = Path(dest_path).joinpath(src_path.name)
     try:
         if src_path.is_dir():
-            shutil.copytree(src=src_path, dst=dest_path, dirs_exist_ok=True)
+            new_dest_path.mkdir(parents=True, exist_ok=True)
+            for loc in src_path.iterdir():
+                check_and_replace(loc, new_dest_path)
         else:
-            shutil.copy2(src=src_path, dst=dest_path)
-        print(f"{application.name.upper()} is placed in {dest_path}")
+            shutil.copy2(src=src_path, dst=new_dest_path)
+            print(f"{src_path.name.upper()} -> {dest_path}")
     except shutil.Error as e:
         print(f"{application.name} couldn't be placed due to : {e}")
 
 
-def get_config_location() -> str:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--loc", help="Config Location to put files in")
-    args = parser.parse_args()
-    return args.loc
-
-
 if __name__ == "__main__":
-    config_loc = get_config_location()
-    for app in find_config_present():
-        check_and_replace(config_loc, app)
+    for curr in find_config_present():
+        check_and_replace(curr, Path.home())
