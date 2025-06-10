@@ -1,10 +1,10 @@
 import shutil
+from collections.abc import Generator
 from pathlib import Path
-from typing import Generator
 
 
 def find_config_present() -> Generator[Path]:
-    ignore_vals = [".git", "config_placer.py", ".gitignore"]
+    ignore_vals = [".git", "config_placer.py", ".gitignore", ".ruff_cache"]
     for loc in Path.cwd().iterdir():
         if loc.name not in ignore_vals:
             yield loc

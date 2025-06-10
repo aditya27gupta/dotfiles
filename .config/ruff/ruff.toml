@@ -23,6 +23,7 @@ ignore = [
     "D203",   # incorrect blank line before class
     "D212",   # multi-line summary first line
     "T201",   # Print statement
+    "INP001",  # Add an _init__.py file
 ]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.

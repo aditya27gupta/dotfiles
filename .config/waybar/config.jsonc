@@ -5,8 +5,8 @@
   "spacing": 10,
 
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right": ["cpu", "wireplumber", "battery", "network", "custom/power"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["network", "wireplumber","cpu", "clock","battery", "custom/power"],
 
   "hyprland/workspaces": {
     "format": "<span size='larger'>{icon}</span>",
@@ -20,6 +20,10 @@
     "persistent-workspaces": {
       "1": [],
     },
+  },
+  
+  "hyprland/window": {
+      "separate-outputs": true
   },
 
   "cpu": {
