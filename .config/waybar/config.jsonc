@@ -1,37 +1,39 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 24,
-  "spacing": 10,
+  "height": 32,
+  "spacing": 4,
 
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["hyprland/window"],
-  "modules-right": ["network", "wireplumber","cpu", "clock","battery", "custom/power"],
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "wireplumber", "cpu", "battery", "custom/power"],
 
   "hyprland/workspaces": {
     "format": "<span size='larger'>{icon}</span>",
     "on-click": "activate",
     "format-icons": {
       "active": "\uf444",
-      "default": "\uf4c3",
+      "default": "\uf4c3"
     },
     "icon-size": 14,
     "sort-by-number": true,
     "persistent-workspaces": {
-      "1": [],
-    },
+      "1": []
+    }
   },
-  
+
   "hyprland/window": {
-      "separate-outputs": true
+    "format": "{title}",
+    "separate-outputs": true,
+    "max-length": 50
   },
 
   "cpu": {
-    "format": "  {usage}%",
+    "format": "  {usage}%"
   },
 
   "clock": {
-    "format": "{:%d.%m.%Y | %H:%M}",
+    "format": "{:%d.%m.%Y | %H:%M}"
   },
 
   "wireplumber": {
@@ -40,7 +42,7 @@
     "on-click": "helvum",
     "format-icons": ["", "", ""],
     "max-volume": 100,
-    "scroll-step": 5,
+    "scroll-step": 5
   },
 
   "battery": {
@@ -48,40 +50,40 @@
     "interval": 60,
     "states": {
       "warning": 40,
-      "critical": 20,
+      "critical": 20
     },
     "format": "{icon} {capacity}%",
     "format-icons": ["", "", "", "", ""],
     "format-full": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "max-length": 25,
+    "max-length": 25
   },
 
   "memory": {
     "interval": 30,
-    "format": "\uf4bc {used:0.1f}G",
+    "format": "\uf4bc {used:0.1f}G"
   },
 
   "temperature": {
-    "format": " {temperatureC}°C",
+    "format": " {temperatureC}°C"
   },
 
   "network": {
     "interface": "wlan0",
     "format": "{ifname}",
-    "format-wifi": "  {signalStrength}% {bandwidthTotalBytes}",
+    "format-wifi": "{bandwidthTotalBytes}   {signalStrength}%",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
     "format-disconnected": "", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-    "tooltip-format-wifi": "{signalStrength}%   {bandwidthTotalBytes}",
+    "tooltip-format-wifi": "{bandwidthTotalBytes}   {signalStrength}%",
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "interval": 2,
+    "interval": 2
   },
 
   "custom/power": {
     "format": " ",
-    "on-click": "nwg-bar",
-  },
+    "on-click": "nwg-bar"
+  }
 }

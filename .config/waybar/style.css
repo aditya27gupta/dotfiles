@@ -2,11 +2,13 @@
 @define-color foreground-inactive #aaaaaa;
 @define-color background #000000;
 @define-color blue #87ceeb;
+@define-color bg-charging #6a9955;
+@define-color bg-critical #ff5555;
 
 * {
     font-family: JetBrainsMono Nerd Font;
     font-size: 12px;
-    padding: 0;
+    padding-left: 5px;
     margin: 0;
 }
 
@@ -15,9 +17,8 @@
     background-color: @background;
 }
 
-#workspaces button {
-    color: @foreground;
-    padding-left: 0.7em;
+#workspaces {
+    padding: 0px;
 }
 
 #workspaces button.active {
@@ -26,4 +27,18 @@
 
 #workspaces button.empty {
     color: @foreground-inactive;
+}
+
+window#waybar {
+    color: @color-default;
+    transition: background-color 0.5s;
+}
+
+#battery.full,
+#battery.plugged {
+    color: @bg-charging;
+}
+
+#custom-power {
+    padding-right: 2px;
 }
