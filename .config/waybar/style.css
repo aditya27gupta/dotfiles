@@ -21,6 +21,10 @@
     padding: 0px;
 }
 
+#workspaces button {
+    padding: 0px;
+}
+
 #workspaces button.active {
     color: @blue;
 }

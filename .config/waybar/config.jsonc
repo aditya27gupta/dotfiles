@@ -13,7 +13,7 @@
     "on-click": "activate",
     "format-icons": {
       "active": "\uf444",
-      "default": "\uf4c3"
+      "default": "\uf4c3",
     },
     "icon-size": 14,
     "sort-by-number": true,
@@ -23,17 +23,19 @@
   },
 
   "hyprland/window": {
-    "format": "{title}",
+    "format": "{initialTitle}",
     "separate-outputs": true,
-    "max-length": 50
+    "icon": true,
+    "icon-size": 20,
+    "expand": true
   },
 
   "cpu": {
-    "format": "  {usage}%"
+    "format": " {usage}%",
   },
 
   "clock": {
-    "format": "{:%d.%m.%Y | %H:%M}"
+    "format": "{:%d.%m.%Y | %H:%M}",
   },
 
   "wireplumber": {
@@ -42,7 +44,7 @@
     "on-click": "helvum",
     "format-icons": ["", "", ""],
     "max-volume": 100,
-    "scroll-step": 5
+    "scroll-step": 5,
   },
 
   "battery": {
@@ -50,22 +52,22 @@
     "interval": 60,
     "states": {
       "warning": 40,
-      "critical": 20
+      "critical": 20,
     },
     "format": "{icon} {capacity}%",
     "format-icons": ["", "", "", "", ""],
     "format-full": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "max-length": 25
+    "max-length": 25,
   },
 
   "memory": {
     "interval": 30,
-    "format": "\uf4bc {used:0.1f}G"
+    "format": "\uf4bc {used:0.1f}G",
   },
 
   "temperature": {
-    "format": " {temperatureC}°C"
+    "format": " {temperatureC}°C",
   },
 
   "network": {
@@ -79,11 +81,11 @@
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "interval": 2
+    "interval": 2,
   },
 
   "custom/power": {
     "format": " ",
-    "on-click": "nwg-bar"
-  }
+    "on-click": "nwg-bar",
+  },
 }
