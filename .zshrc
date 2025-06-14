@@ -5,12 +5,33 @@ export PATH="$PATH:$HOME/.local/bin"
 source /home/device/zsh_plugin/zsh-completions/zsh-completions.plugin.zsh
 
 # Initialization
-autoload -U compinit; compinit
+autoload -U compinit
+autoload -Uz colors
+colors
+
+# Completion
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
 
 # Setup zshrc
 HISTFILE=${HISTFILE:-$HOME/.zsh_history}
 HISTSIZE=10000
 SAVEHIST=10000
+
+# Autosuggestion
+ZSH_AUTOSUGGEST_USE_ASYNC="true"
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor regexp root line)
+ZSH_HIGHLIGHT_MAXLENGTH=512
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=$color8,bold"
+
 setopt SHARE_HISTORY             # Share history between all sessions.
 setopt INC_APPEND_HISTORY     # Write to the history file immediately, not when the shell exits
 setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history.

@@ -3,7 +3,6 @@
   "position": "top",
   "height": 32,
   "spacing": 4,
-
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": ["clock"],
   "modules-right": ["network", "wireplumber", "cpu", "battery", "custom/power"],
@@ -18,16 +17,16 @@
     "icon-size": 14,
     "sort-by-number": true,
     "persistent-workspaces": {
-      "1": []
-    }
+      "1": [],
+    },
   },
 
   "hyprland/window": {
-    "format": "{initialTitle}",
+    "format": "{initialTitle} - {title}",
     "separate-outputs": true,
     "icon": true,
-    "icon-size": 20,
-    "expand": true
+    "icon-size": 14,
+    "expand": true,
   },
 
   "cpu": {
