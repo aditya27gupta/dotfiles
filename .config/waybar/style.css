@@ -39,7 +39,8 @@ window#waybar {
 }
 
 #battery.full,
-#battery.plugged {
+#battery.plugged,
+#battery.charging {
     color: @bg-charging;
 }
 

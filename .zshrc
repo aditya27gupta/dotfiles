@@ -65,9 +65,4 @@ zstyle ':completion:*:*:*:*:warnings' format ' %F{red}-- no matches found --%f'
 # Alias
 alias ls="ls -lAhg --color=auto | column -t"
 
-# Program Initialization
-if [[ -o interactive ]]; then
-    fastfetch
-fi
-
 eval "$(starship init zsh)"
