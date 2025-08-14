@@ -83,7 +83,6 @@
   },
   "agent": {
     "enabled": false,
-    "button": false,
-    "version": "2"
+    "button": false
   }
 }
