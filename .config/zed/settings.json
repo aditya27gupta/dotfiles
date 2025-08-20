@@ -82,7 +82,11 @@
     "auto_fold_dirs": true
   },
   "agent": {
-    "enabled": false,
-    "button": false
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3.5-sonnet"
+    },
+    "enabled": true,
+    "button": true
   }
 }
