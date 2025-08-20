@@ -28,9 +28,7 @@
     "enabled": true,
     "coloring": "indent_aware"
   },
-  "search_results": true,
   "hover_popover_enabled": true,
-  "hour_format": "hour24",
   "unnecessary_code_fade": 0.7,
   "enable_language_server": true,
   "languages": {

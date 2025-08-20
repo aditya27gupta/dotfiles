@@ -5,7 +5,8 @@ from pathlib import Path
 
 def find_config_present() -> Generator[Path]:
     ignore_vals = [".git", "config_placer.py", ".gitignore", ".ruff_cache"]
-    for loc in Path.cwd().iterdir():
+    for loc in Path.home().joinpath("Github/dotfiles").iterdir():
+        print(loc)
         if loc.name not in ignore_vals:
             yield loc
 
