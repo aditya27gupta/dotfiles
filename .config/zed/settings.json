@@ -1,6 +1,6 @@
 {
   "features": {
-    "edit_prediction_provider": "none"
+    "edit_prediction_provider": "copilot"
   },
   "terminal": {
     "dock": "bottom",
