@@ -26,6 +26,7 @@ ignore = [
     "D212",   # multi-line summary first line
     "T201",   # Print statement
     "INP001", # Add an _init__.py file
+    "D401",   # non-imperative-mood
 ]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.
