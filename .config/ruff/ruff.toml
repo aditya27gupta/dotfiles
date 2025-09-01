@@ -27,6 +27,9 @@ ignore = [
     "T201",   # Print statement
     "INP001", # Add an _init__.py file
     "D401",   # non-imperative-mood
+    "D107",   # Missing docstring for init
+    "D101",   # Missing docstring for class
+    "D102",   # Missing docstring for function
 ]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.
