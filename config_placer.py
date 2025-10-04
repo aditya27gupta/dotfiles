@@ -29,7 +29,7 @@ def find_config_files() -> Generator[Path, None, None]:
         Github directory.
 
     """
-    dotfiles_path = Path.home().joinpath("Github/dotfiles")
+    dotfiles_path = Path(__file__).parent
     for item_path in dotfiles_path.iterdir():
         if item_path.name not in IGNORED_PATHS:
             yield item_path
