@@ -10,25 +10,13 @@ This script helps maintain dotfiles by:
 import shutil
 from collections.abc import Generator
 from pathlib import Path
-from typing import Final
 
 # Constants
-IGNORED_PATHS: Final[frozenset[str]] = frozenset({".git", "config_placer.py", ".gitignore", ".ruff_cache"})
+IGNORED_PATHS: frozenset[str] = frozenset({".git", "config_placer.py", ".gitignore", ".ruff_cache"})
 
 
 def find_config_files() -> Generator[Path, None, None]:
-    """
-    Find all configuration files and directories in the dotfiles repository.
-
-    Yields:
-        Path: Path objects for each configuration file or directory found,
-              excluding items specified in IGNORED_PATHS.
-
-    Note:
-        The search is performed in the 'dotfiles' directory within the user's
-        Github directory.
-
-    """
+    """Find all configuration files and directories in the dotfiles repository."""
     dotfiles_path = Path(__file__).parent
     for item_path in dotfiles_path.iterdir():
         if item_path.name not in IGNORED_PATHS:
@@ -36,17 +24,7 @@ def find_config_files() -> Generator[Path, None, None]:
 
 
 def copy_config_item(source: Path, destination: Path) -> None:
-    """
-    Copy a configuration file or directory to its destination.
-
-    Args:
-        source: The source Path object to copy from
-        destination: The destination Path object to copy to
-
-    The function handles both files and directories recursively, preserving
-    metadata and creating parent directories as needed.
-
-    """
+    """Copy a configuration file or directory to its destination."""
     if source.name in IGNORED_PATHS:
         print(f"Skipping ignored item: {source.name}")
         return
