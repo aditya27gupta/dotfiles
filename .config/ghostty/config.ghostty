@@ -2,3 +2,5 @@ font-family = JetBrainsMonoNL Nerd Font Mono
 font-size = 11
 config-file = ?auto/theme.ghostty
 window-decoration = auto
+window-height = 25
+window-width = 100
