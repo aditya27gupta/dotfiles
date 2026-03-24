@@ -1,14 +1,16 @@
 #Update Path Variable
 export PATH="$PATH:$HOME/.local/bin"
 ZSH_PLUGIN=$HOME/zsh_plugin
+ZSH_SUGGESTION_PATH="$ZSH_PLUGIN/zsh-autosuggestions/zsh-autosuggestions.zsh"
+ZSH_COMPLETION_PATH="$ZSH_PLUGIN/zsh-completions/zsh-completions.plugin.zsh" 
 
 # Initialization
 autoload -U compinit; compinit
 
 # Load Plugins
-source $ZSH_PLUGIN/fast-syntax-highlighting/F-Sy-H.plugin.zsh
-source $ZSH_PLUGIN/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSH_PLUGIN/zsh-completions/zsh-completions.plugin.zsh
+[ -e "$ZSH_SUGGESTION_PATH" ] && source $ZSH_SUGGESTION_PATH || echo "$FILE does not exist."
+[ -e "$ZSH_COMPLETION_PATH" ] && source $ZSH_COMPLETION_PATH || echo "$FILE does not exist."
+eval "$(uv generate-shell-completion zsh)"
 
 # Setup zshrc
 HISTFILE=$HOME/.zsh_history
