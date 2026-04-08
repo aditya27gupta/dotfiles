@@ -1,6 +1,6 @@
 font-family = JetBrainsMonoNL Nerd Font Mono
-font-size = 11
-config-file = ?auto/theme.ghostty
+font-size = 12
+theme = Firewatch
 window-decoration = auto
 window-height = 25
 window-width = 100

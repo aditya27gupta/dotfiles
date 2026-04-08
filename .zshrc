@@ -65,6 +65,6 @@ zstyle ':completion:*:*:*:*:messages' format ' %F{purple} -- %d --%f'
 zstyle ':completion:*:*:*:*:warnings' format ' %F{red}-- no matches found --%f'
 
 # Alias
-alias ls="ls -lAhg "
+alias ls="ls -Ahg "
 
 eval "$(starship init zsh)"
