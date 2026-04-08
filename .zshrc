@@ -1,5 +1,9 @@
 #Update Path Variable
 export PATH="$PATH:$HOME/.local/bin"
+export MANPAGER="less -R --use-color -Dd+r -Du+b"
+export GROFF_NO_SGR=1
+
+
 ZSH_PLUGIN=$HOME/zsh_plugin
 ZSH_SUGGESTION_PATH="$ZSH_PLUGIN/zsh-autosuggestions/zsh-autosuggestions.zsh"
 ZSH_COMPLETION_PATH="$ZSH_PLUGIN/zsh-completions/zsh-completions.plugin.zsh" 
@@ -10,7 +14,6 @@ autoload -U compinit; compinit
 # Load Plugins
 [ -e "$ZSH_SUGGESTION_PATH" ] && source $ZSH_SUGGESTION_PATH || echo "$FILE does not exist."
 [ -e "$ZSH_COMPLETION_PATH" ] && source $ZSH_COMPLETION_PATH || echo "$FILE does not exist."
-eval "$(uv generate-shell-completion zsh)"
 
 # Setup zshrc
 HISTFILE=$HOME/.zsh_history
@@ -65,6 +68,6 @@ zstyle ':completion:*:*:*:*:messages' format ' %F{purple} -- %d --%f'
 zstyle ':completion:*:*:*:*:warnings' format ' %F{red}-- no matches found --%f'
 
 # Alias
-alias ls="ls -Ahg "
+alias ls="ls -Ahg --color "
 
 eval "$(starship init zsh)"

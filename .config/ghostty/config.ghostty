@@ -1,6 +1,8 @@
 font-family = JetBrainsMonoNL Nerd Font Mono
 font-size = 12
-theme = Firewatch
+# theme = Firewatch
+theme = Monokai Pro Spectrum
 window-decoration = auto
 window-height = 25
 window-width = 100
+background-opacity = 0.9
