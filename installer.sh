@@ -5,8 +5,8 @@ sudo pacman -S zsh ghostty zed uv starship firefox neovim git
 
 echo "Creating Directory"
 cd $HOME
-mkdir Github
-mkdir zsh_plugin
+[ ! -d "Github" ] && mkdir "Github"
+[! -d "zsh_plugin"] && mkdir "zsh_plugin"
 
 echo "Pulling Repositories for zsh"
 cd zsh_plugin
