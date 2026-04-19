@@ -1,17 +1,16 @@
 #!/bin/bash
 
 echo "Installing Applications"
-sudo pacman -S zsh ghostty zed uv starship firefox neovim git
+sudo pacman -S fish ghostty zed uv starship firefox neovim git
 
 echo "Creating Directory"
 cd $HOME
 [ ! -d "Github" ] && mkdir "Github"
-[! -d "zsh_plugin"] && mkdir "zsh_plugin"
 
-echo "Pulling Repositories for zsh"
-cd zsh_plugin
-git clone https://github.com/zsh-users/zsh-autosuggestions.git
-git clone https://github.com/zsh-users/zsh-completions.git
+# echo "Pulling Repositories for zsh"
+# cd zsh_plugin
+# git clone https://github.com/zsh-users/zsh-autosuggestions.git
+# git clone https://github.com/zsh-users/zsh-completions.git
 
 echo "Pulling Dotfiles"
 cd ~/Github/
