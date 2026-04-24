@@ -1,17 +1,12 @@
 format = """
-$os\
 $username\
 $directory\
 $git_branch\
 $git_status\
-$conda\
 $docker_context\
 $cmd_duration\
 \n$character\
 """
-
-# Disable the blank line at the start of the prompt
-# add_newline = false
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
@@ -22,33 +17,11 @@ style_root = "fg:#FE8A71 bold"
 format = '[$user ]($style)'
 disabled = false
 
-# An alternative to the username module which displays a symbol that
-# represents the current operating system
-[os]
-disabled = true # Disabled by default
-style = "fg:#3DA4AB"
-
-[os.symbols]
-Mint = " "
-
 [directory]
 style = "fg:#B7C6E7"
 format = "[in $path ]($style)"
 truncation_length = 3
 truncation_symbol = ""
-
-[directory.substitutions]
-"Documents" = " "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-
-[conda]
-symbol = " "
-style = "fg:#ffd43b"
-format = '[ $symbol $environment ]($style)'
-ignore_base = false
-disabled = false
 
 [docker_context]
 symbol = " "
