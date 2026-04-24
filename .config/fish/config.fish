@@ -10,6 +10,7 @@ export GROFF_NO_SGR=1
 
 
 ## Functions
+
 # Functions needed for !!
 function __history_previous_command
   switch (commandline -t)
@@ -20,9 +21,12 @@ function __history_previous_command
   end
 end
 
+
 bind ! __history_previous_command
 
+
 fish_config theme choose catppuccin-macchiato
+
 
 if status is-interactive
 # Commands to run in interactive sessions can go here
