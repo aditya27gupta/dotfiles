@@ -1,2 +1,4 @@
 *.pyc
 .ruff_cache
+*lock*
+fish_variables
